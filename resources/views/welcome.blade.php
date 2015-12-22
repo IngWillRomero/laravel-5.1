@@ -36,10 +36,19 @@
         </style>
     </head>
     <body>
-        <div class="container">
+
+      {!! Form::open() !!}
+          <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+              {!! Form::label('name', 'Nombre') !!}
+              {!! Form::text('name', null, ['class'=>'form-control']) !!}
             </div>
-        </div>
+
+          </div>
+      {!! Form::close() !!}
+
+
+
+
     </body>
 </html>
