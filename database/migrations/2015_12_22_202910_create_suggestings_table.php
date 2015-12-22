@@ -17,6 +17,15 @@ class CreateSuggestingsTable extends Migration
             $table->string('item') ;
             $table->text('text') ;
             $table->time('time') ;
+
+            $table->integer('client_id')->unsigned() ;
+            $table->integer('user_id')->unsigned() ;
+
+            $table->foreign('client_id')->references('id')->on('clients')
+            ->onDelete('cascade') ;
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade') ;
+
             $table->timestamps();
         });
     }

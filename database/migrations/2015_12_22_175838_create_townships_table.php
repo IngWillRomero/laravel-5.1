@@ -15,6 +15,11 @@ class CreateTownshipsTable extends Migration
         Schema::create('townships', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name') ;
+
+            $table->integer(municipality_id)->unsigned() ;
+            $table->foreign(municipality_id)->references('id')->on('municipalities')
+            ->onDelete('cascade') ;
+
             $table->timestamps();
         });
     }

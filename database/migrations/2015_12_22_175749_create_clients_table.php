@@ -19,6 +19,11 @@ class CreateClientsTable extends Migration
             $table->string('address') ;
             $table->string('cel') ;
             $table->string('password') ;
+
+            $table->integer('admin_id')->unsigned() ;
+            $table->foreign('admin_id')->references('id')->on('admins')
+            ->onDelete('cascade') ;
+
             $table->timestamps();
         });
     }

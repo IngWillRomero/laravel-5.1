@@ -17,6 +17,11 @@ class CreateImagesTable extends Migration
             $table->string('name') ;
             $table->string('route') ;
             $table->timestamps();
+
+
+            $table->integer('admin_id')->unsigned() ;
+            $table->foreign('admin_id')->references('id')->on('admins')
+            ->onDelete('cascade') ;
         });
     }
 
