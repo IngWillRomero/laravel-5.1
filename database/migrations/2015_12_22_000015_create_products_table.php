@@ -18,13 +18,13 @@ class CreateProductsTable extends Migration
             $table->integer('cost') ;
             $table->string('slug')->nullable() ;
 
-            //$table->integer('category_id')->unsigned() ;
-            //$table->integer('subcategories_id')->unsigned() ;
+            $table->integer('category_id')->unsigned() ;
+            $table->integer('subcategories_id')->unsigned() ;
 
-            //$table->foreign('category_id')->references('id')->on('categories')
-            //->onDelete('cascade') ;
-            //$table->foreign('subcategories_id')->references('id')->on('subcategories')
-            //->onDelete('cascade') ;
+            $table->foreign('category_id')->references('id')->on('categories')
+            ->onDelete('cascade') ;
+            $table->foreign('subcategories_id')->references('id')->on('subcategories')
+            ->onDelete('cascade') ;
 
             $table->timestamps();
         });

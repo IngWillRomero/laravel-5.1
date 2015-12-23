@@ -33,6 +33,19 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('user_municipality',function(Blueprint $table){
+          $table->increments('id') ;
+
+          $table->integer('user_id')->unsigned() ;
+          $table->integer('municipality_id')->unsigned() ;
+
+          $table->foreign('user_id')->references('id')->on('users')
+          ->onDelete('cascade') ;
+          $table->foreign('municipality_id')->references('id')->on('municipalities')
+          ->onDelete('cascade') ;
+
+        }) ;
     }
 
     /**

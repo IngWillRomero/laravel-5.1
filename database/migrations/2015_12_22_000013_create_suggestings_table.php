@@ -22,9 +22,9 @@ class CreateSuggestingsTable extends Migration
             $table->integer('user_id')->unsigned() ;
 
             $table->foreign('client_id')->references('id')->on('clients')
-            ->onDelete('cascade') ;
+            ->onDelete('cascade'); ;
             $table->foreign('user_id')->references('id')->on('users')
-            ->onDelete('cascade') ;
+            ->onDelete('cascade'); ;
 
             $table->timestamps();
         });
