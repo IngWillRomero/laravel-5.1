@@ -24,6 +24,7 @@ class CreateClientsTable extends Migration
             $table->foreign('admin_id')->references('id')->on('admins')
             ->onDelete('cascade') ;
 
+            $table->rememberToken() ;
             $table->timestamps();
         });
     }

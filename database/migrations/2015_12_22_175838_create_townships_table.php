@@ -16,9 +16,9 @@ class CreateTownshipsTable extends Migration
             $table->increments('id');
             $table->string('name') ;
 
-            $table->integer(municipality_id)->unsigned() ;
-            $table->foreign(municipality_id)->references('id')->on('municipalities')
-            ->onDelete('cascade') ;
+            //$table->integer(municipality_id)->unsigned() ;
+            //$table->foreign(municipality_id)->references('id')->on('municipalities')
+            //->onDelete('cascade') ;
 
             $table->timestamps();
         });
